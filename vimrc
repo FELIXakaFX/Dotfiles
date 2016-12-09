@@ -5,10 +5,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
+set runtimepath+=/Users/Felix/.vim/bundle/neobundle.vim/
 
 " Required:
-call neobundle#begin(expand('$HOME/.vim/bundle'))
+call neobundle#begin(expand('/Users/Felix/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -57,6 +57,8 @@ vmap <Leader>v <Plug>(expand_region_shrink)
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
+nnoremap <CR> G
+nnoremap <BS> gg
 map <c-d> :sh<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
