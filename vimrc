@@ -1,3 +1,4 @@
+
 "NeoBundle Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -30,6 +31,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='powerlineish'
 set laststatus=2
 NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'NLKNguyen/papercolor-theme'
 
 " Required:
 call neobundle#end()
@@ -65,3 +67,16 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 set paste
+
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+set backspace=indent,eol,start
+
+hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
+set background=dark
+colorscheme solarized
