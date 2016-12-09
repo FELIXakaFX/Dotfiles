@@ -1,3 +1,4 @@
+set t_Co=256
 
 "NeoBundle Scripts-----------------------------
 if &compatible
@@ -5,10 +6,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/Felix/.vim/bundle/neobundle.vim/
+set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
 
 " Required:
-call neobundle#begin(expand('/Users/Felix/.vim/bundle'))
+call neobundle#begin(expand('$HOME/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -32,6 +33,7 @@ let g:airline_theme='powerlineish'
 set laststatus=2
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'NLKNguyen/papercolor-theme'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " Required:
 call neobundle#end()
@@ -78,5 +80,6 @@ hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=wh
 hi CursorColumn cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized

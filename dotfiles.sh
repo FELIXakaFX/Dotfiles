@@ -14,8 +14,12 @@ if [[ $1 == "-s" ]]; then
 	git push origin master
 fi
 if [[ $1 == "-d" ]]; then
+	if ! [ -d ~/dotfiles ]; then
 	mkdir ~/dotfiles
 	git clone https://github.com/FELIXakaFX/dotfiles.git ~/dotfiles
+	else
+	cd ~/dotfiles && git pull
+	fi
 	mkdir ~/.i3
 	mv -f ~/.i3 ~/i3.backup
 	cp -r ~/dotfiles/i3/* ~/.i3/
