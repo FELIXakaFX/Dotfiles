@@ -78,8 +78,8 @@ set backspace=indent,eol,start
 
 hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
 hi CursorColumn cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-
+nnoremap <Leader>c :set cursorcolumn!<CR>
+set cursorline
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized

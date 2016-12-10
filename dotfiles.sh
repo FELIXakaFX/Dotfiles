@@ -20,8 +20,9 @@ if [[ $1 == "-d" ]]; then
 	else
 	cd ~/dotfiles && git pull
 	fi
+	rm -r ~/.i3.backup
+	mv -f ~/.i3 ~/.i3.backup
 	mkdir ~/.i3
-	mv -f ~/.i3 ~/i3.backup
 	cp -r ~/dotfiles/i3/* ~/.i3/
 	#cp ~/dotfiles/zshrc ~/.zshrc
 	mv -f ~/.vimrc ~/.vimrc.backup
