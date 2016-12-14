@@ -1,0 +1,1 @@
+DISPLAY=:0 rofi -show run -modi "run,window,ssh" -bw 0 -color-normal "#29303A,#ffffff,#29303A,#29303A,#ee4d2e" -color-window "#29303A,#29303A" -font "System San Francisco Display Thin 50" -lines 3 -fullscreen -padding 400 -no-show-match      

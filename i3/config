@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # There also is the (new) i3-dmenu-desktop which only displays applications
 #bindsym $mod+d exec 'rofi -show run -bw 0 -color-normal "#29303A,#ffffff,#29303A,#29303A,#ee4d2e" -color-window "#29303A,#29303A" -font "System San Francisco Display Thin 50" -lines 3 -fullscreen -padding 400' 
-bindsym $mod+d exec --no-startup-id zsh -c 'rofi -show run -modi "run,window,ssh" -bw 0 -color-normal "#29303A,#ffffff,#29303A,#29303A,#ee4d2e" -color-window "#29303A,#29303A" -font "System San Francisco Display Thin 50" -lines 3 -fullscreen -padding 400 -no-show-match'
+bindsym $mod+d exec zsh ~/.i3/rofi.sh
 #bindsym $mod+d exec dmenu_run -sf "#ffffff" -nf "#ffffff" -sb "#EE4D2E" -nb "$grey"
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -209,21 +209,21 @@ bar {
 bindsym F12         mode MiLight
 
 mode MiLight {
-	bindsym plus exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\xC5\00\x55"
-	bindsym 1 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\x00\x55"
-	bindsym 2 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\x20\x55"
-	bindsym 3 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\x40\x55"
-	bindsym 4 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\x60\x55"
-        bindsym 5 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\x80\x55"
-        bindsym 6 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\xA0\x55"
-        bindsym 7 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\xC0\x55"
-        bindsym 8 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\xE0\x55"
-        bindsym 9 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x4E\xd\x55"
-        bindsym 0 exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x4E\x1B\x55"
-	bindsym period exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x45\00\x55"
-	bindsym comma exec bash /home/anon/Documents/MiLight/miLIGHT.sh "\x46\00\x55"
-	bindsym minus exec bash /home/anon/Documents/MiLight/Fade.sh 0.2
-	bindsym space exec bash /home/anon/Documents/MiLight/Screen.sh -a
+	bindsym plus exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\xC5\00\x55"
+	bindsym 1 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\x00\x55"
+	bindsym 2 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\x20\x55"
+	bindsym 3 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\x40\x55"
+	bindsym 4 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\x60\x55"
+        bindsym 5 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\x80\x55"
+        bindsym 6 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\xA0\x55"
+        bindsym 7 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\xC0\x55"
+        bindsym 8 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\xE0\x55"
+        bindsym 9 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x4E\xd\x55"
+        bindsym 0 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x4E\x1B\x55"
+	bindsym period exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x45\00\x55"
+	bindsym comma exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x46\00\x55"
+	bindsym minus exec bash /home/anon/Documents/Bash/MiLight/Fade.sh 0.2
+	bindsym space exec bash /home/anon/Documents/Bash/MiLight/Screen.sh -a
 	bindsym Escape mode "default"
 }
 
@@ -231,20 +231,16 @@ assign [class="Kodi"] $workspace10
 assign [class="Franz"] $workspace11
 
 bindsym $mod+y exec vivaldi
-bindsym $mod+shift+y exec "scrot -z ~/.tmp.png; mogrify -blur 0x5 ~/.tmp.png; exec i3lock -i ~/.tmp.png -c 212121"
-bindsym $mod+shift+x exec "feh --bg-scale /home/anon/Downloads/Wallpaper.png; exec i3lock -c 212121"
-bindsym $mod+k exec "killall vivaldi; killall chrome"
+bindsym $mod+shift+y exec "scrot -z ~/.tmp.png; mogrify -blur 0x5 ~/.tmp.png; i3lock -i ~/.tmp.png -c 212121"
+bindsym $mod+shift+x exec "exec i3lock -c 212121"
 
 bindsym KP_Subtract exec "bash /home/anon/Documents/MiLight/Screen.sh -a"
-bindsym KP_Multiply exec "bash /home/anon/Documents/Bash/PrivateMode.sh"
-exec xinput --set-prop "Mad Catz Mad Catz R.A.T.9 Wireless Mouse" "Device Accel Constant Deceleration" 2
+bindsym KP_Multiply exec "zsh Documents/Private/Vivaldi.sh"
 
-exec_always feh --bg-scale /home/anon/.themes/Day/Wallpaper.png
-exec compton
-exec curl "192.168.0.9/led?br=80&r=0&g=0&b=0&mode=4"
 #exec_always bash /home/anon/Documents/MiLight/miLIGHT.sh "\x45\00\x55"
 #exec_always bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\xA7\x55"
 
+exec_always xinput --set-prop "Mad Catz Mad Catz R.A.T.9 Wireless Mouse" "Device Accel Constant Deceleration" 2
+exec_always zsh /home/anon/.screenlayout/1.sh; feh --bg-scale /home/anon/.themes/Day/Wallpaper.png
 exec bash /home/anon/Documents/Bash/BOOT.sh
-
-exec_always zsh /home/anon/.screenlayout/1.sh
+reload

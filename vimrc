@@ -1,5 +1,4 @@
 set t_Co=256
-
 "NeoBundle Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -66,6 +65,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+noremap l h
+noremap ; l
+noremap h ;
+cmap w!! w !sudo tee > /dev/null %
 set splitbelow
 set splitright
 set paste
@@ -80,6 +83,6 @@ hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=wh
 hi CursorColumn cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
 nnoremap <Leader>c :set cursorcolumn!<CR>
 set cursorline
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+"let g:solarized_termcolors=256
+"set background=dark
+"colorscheme solarized
