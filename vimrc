@@ -49,7 +49,7 @@ NeoBundleCheck
 set number
 syntax on
 let mapleader = "\<Space>"
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>o :CtrlPMRU<CR>
 nmap <Leader><Leader> V
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
@@ -58,8 +58,6 @@ vmap <Leader>v <Plug>(expand_region_shrink)
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
-nnoremap <CR> G
-nnoremap <BS> gg
 map <c-d> :sh<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
