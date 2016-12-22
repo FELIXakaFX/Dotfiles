@@ -249,7 +249,7 @@ bindsym $mod+shift+x exec "exec i3lock -c 212121"
 #exec_always bash /home/anon/Documents/MiLight/miLIGHT.sh "\x45\00\x55"
 #exec_always bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\xA7\x55"
 
-exec_alwaysxinput --set-prop "Mad Catz Mad Catz R.A.T.9 Wireless Mouse" "Device Accel Constant Deceleration" 2
+exec_always xinput --set-prop "Mad Catz Mad Catz R.A.T.9 Wireless Mouse" "Device Accel Constant Deceleration" 2
 exec_always zsh /home/anon/.screenlayout/1.sh; feh --bg-scale ~/.i3/Wallpaper.png
 workspace $workspace12 output DVI-I-1
 exec bash /home/anon/Documents/Bash/BOOT.sh
