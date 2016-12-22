@@ -123,6 +123,17 @@ bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 bindsym $mod+p workspace $workspace13
 
+bindsym F1 workspace $workspace1
+bindsym F2 workspace $workspace2
+bindsym F3 workspace $workspace3
+bindsym F4 workspace $workspace4
+bindsym F5 workspace $workspace5
+bindsym F6 workspace $workspace6
+bindsym F7 workspace $workspace7
+bindsym F8 workspace $workspace8
+bindsym F9 workspace $workspace9
+bindsym F0 workspace $workspace10
+
 bindsym KP_1 workspace $workspace1
 bindsym KP_2 workspace $workspace2
 bindsym KP_3 workspace $workspace3
@@ -210,7 +221,6 @@ bar {
 bindsym F12         mode MiLight
 
 mode MiLight {
-	set bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh"
 	bindsym plus exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\xC5\00\x55"
 	bindsym 1 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\x00\x55"
 	bindsym 2 exec bash /home/anon/Documents/Bash/MiLight/miLIGHT.sh "\x40\x20\x55"
@@ -239,8 +249,16 @@ bindsym $mod+shift+x exec "exec i3lock -c 212121"
 #exec_always bash /home/anon/Documents/MiLight/miLIGHT.sh "\x45\00\x55"
 #exec_always bash /home/anon/Documents/MiLight/miLIGHT.sh "\x40\xA7\x55"
 
-exec_always xinput --set-prop "Mad Catz Mad Catz R.A.T.9 Wireless Mouse" "Device Accel Constant Deceleration" 2
-exec_always zsh /home/anon/.screenlayout/1.sh; feh --bg-scale /home/anon/.themes/Day/Wallpaper.png
+exec_alwaysxinput --set-prop "Mad Catz Mad Catz R.A.T.9 Wireless Mouse" "Device Accel Constant Deceleration" 2
+exec_always zsh /home/anon/.screenlayout/1.sh; feh --bg-scale ~/.i3/Wallpaper.png
 workspace $workspace12 output DVI-I-1
 exec bash /home/anon/Documents/Bash/BOOT.sh
-reload
+
+
+bindsym Mod1+shift+a --release exec --no-startup-id xdotool key --clearmodifiers shift+adiaeresis
+bindsym Mod1+shift+o --release exec --no-startup-id xdotool key --clearmodifiers shift+odiaeresis
+bindsym Mod1+shift+u --release exec --no-startup-id xdotool key --clearmodifiers shift+udiaeresis
+
+bindsym Mod1+a --release exec --no-startup-id xdotool key --clearmodifiers adiaeresis
+bindsym Mod1+o --release exec --no-startup-id xdotool key --clearmodifiers odiaeresis
+bindsym Mod1+u --release exec --no-startup-id xdotool key --clearmodifiers udiaeresis
