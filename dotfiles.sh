@@ -8,15 +8,14 @@ if [[ $1 == "-s" ]]; then
 	cp -r ~/.i3/* ~/dotfiles/i3/
 	#cp ~/.zshrc ~/dotfiles/zshrc
 	cp ~/.vimrc ~/dotfiles/vimrc
-	cd ~/dotfiles
-	git add *
-	git commit -m "$comment"
-	git push origin master
+	git -C ~/dotfiles add *
+	git -C ~/dotfiles commit -m "$comment"
+	git -C ~/dotfiles push origin master
 fi
 if [[ $1 == "-d" ]]; then
 	if ! [ -d ~/dotfiles ]; then
 	mkdir ~/dotfiles
-	git clone https://github.com/FELIXakaFX/dotfiles.git ~/dotfiles
+	git -C ~/dotfiles pull
 	else
 	cd ~/dotfiles && git pull
 	fi
