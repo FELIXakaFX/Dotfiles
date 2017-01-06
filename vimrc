@@ -1,14 +1,14 @@
-
+set t_Co=256
 "NeoBundle Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=/Users/Felix/.vim/bundle/neobundle.vim/
+set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
 
 " Required:
-call neobundle#begin(expand('/Users/Felix/.vim/bundle'))
+call neobundle#begin(expand('$HOME/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -32,6 +32,7 @@ let g:airline_theme='powerlineish'
 set laststatus=2
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'NLKNguyen/papercolor-theme'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " Required:
 call neobundle#end()
@@ -48,7 +49,7 @@ NeoBundleCheck
 set number
 syntax on
 let mapleader = "\<Space>"
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>o :CtrlPMRU<CR>
 nmap <Leader><Leader> V
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
@@ -57,13 +58,15 @@ vmap <Leader>v <Plug>(expand_region_shrink)
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
-nnoremap <CR> G
-nnoremap <BS> gg
 map <c-d> :sh<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+noremap l h
+noremap ; l
+noremap h ;
+cmap w!! w !sudo tee > /dev/null %
 set splitbelow
 set splitright
 set paste
@@ -76,7 +79,8 @@ set backspace=indent,eol,start
 
 hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
 hi CursorColumn cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-
-set background=dark
-colorscheme solarized
+nnoremap <Leader>c :set cursorcolumn!<CR>
+set cursorline
+"let g:solarized_termcolors=256
+"set background=dark
+"colorscheme solarized
