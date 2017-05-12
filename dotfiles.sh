@@ -26,7 +26,7 @@ if [[ $1 == *"-d"* ]]; then
 		mkdir ~/dotfiles
 		git -C ~/dotfiles pull
 	else
-		git -C ~/dotfiles pull
+		git clone https://github.com/FELIXakaFX/dotfiles
 	fi
 	if ! [ -z $auto ] || $(read -q "?Save i3 [y/N] "); then
 		mv -f ~/.i3 ~/dotfiles/i3.backup && cp -r ~/dotfiles/i3 ~/.i3
